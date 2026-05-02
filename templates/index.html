@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroTranslate | Premium AI Translator</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-language"></i></div>
+                <span>Neuro<span class="highlight">Translate</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="/app">App</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="/app" class="btn btn-primary btn-sm">Try Now</a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="/app" class="mobile-link">App</a></li>
+            <li><a href="#features" class="mobile-link">Features</a></li>
+            <li><a href="#how-it-works" class="mobile-link">How It Works</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text reveal">
+                    <div class="badge">✨ Next-Gen Translation Engine</div>
+                    <h1>Break Language Barriers <br>With <span class="text-gradient">Instant AI</span></h1>
+                    <p class="subtitle">Experience flawless, human-like translations across 100+ languages natively powered by state-of-the-art machine learning.</p>
+                    <div class="hero-buttons">
+                        <a href="/app" class="btn btn-primary btn-lg">Start Translating <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#how-it-works" class="btn btn-secondary btn-lg">How it works</a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal reveal-delay">
+                    <div class="floating-card glass-panel mockup-card">
+                        <div class="mockup-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="mockup-body">
+                            <p class="source-mockup">"The future belongs to those who learn."</p>
+                            <div class="mockup-divider"><i class="fa-solid fa-bolt"></i> AI Processing</div>
+                            <p class="target-mockup">"El futuro pertenece a quienes aprenden."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Why Choose <span class="text-gradient">NeuroTranslate</span></h2>
+                    <p>Built for professionals who need speed, accuracy, and beauty.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card glass-panel reveal">
+                        <div class="feature-icon bg-blue">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized algorithms deliver real-time translations with zero perceived latency.</p>
+                    </div>
+                    
+                    <div class="feature-card glass-panel reveal reveal-delay-1">
+                        <div class="feature-icon bg-purple">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3>100+ Languages</h3>
+                        <p>From English to Zulu, bridge communication gaps effortlessly across the globe.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal reveal-delay-2">
+                        <div class="feature-icon bg-pink">
+                            <i class="fa-solid fa-headphones"></i>
+                        </div>
+                        <h3>Native Audio TTS</h3>
+                        <p>Hear the precise pronunciation of your translations via integrated Text-to-Speech.</p>
+                    </div>
+
+                    <div class="feature-card glass-panel reveal reveal-delay-3">
+                        <div class="feature-icon bg-green">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3>Secure & Private</h3>
+                        <p>Your inputs are processed securely without being stored in any persistent databases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-works-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>How It <span class="text-gradient">Works</span></h2>
+                    <p>Three simple steps to perfect communication.</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-box reveal">
+                        <div class="step-number">01</div>
+                        <h3>Input Text</h3>
+                        <p>Type or paste any text into the source panel. NeuroTranslate can automatically detect the language for you.</p>
+                    </div>
+                    
+                    <div class="step-connector reveal"><i class="fa-solid fa-arrow-right"></i></div>
+                    
+                    <div class="step-box reveal reveal-delay-1">
+                        <div class="step-number">02</div>
+                        <h3>Select Target</h3>
+                        <p>Choose your desired output language from our extensive dropdown menu of over 100 global languages.</p>
+                    </div>
+
+                    <div class="step-connector reveal reveal-delay-1"><i class="fa-solid fa-arrow-right"></i></div>
+
+                    <div class="step-box reveal reveal-delay-2">
+                        <div class="step-number">03</div>
+                        <h3>Get Results</h3>
+                        <p>Hit Translate. Instantly copy the result or click the speaker icon to hear how it sounds natively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-language"></i></div>
+                    <span>Neuro<span class="highlight">Translate</span></span>
+                </div>
+                <p>The premium translation studio for modern professionals.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Product</h4>
+                    <a href="/app">Translator App</a>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+                <div class="link-group">
+                    <h4>Connect</h4>
+                    <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> NeuroTranslate. Built with Flask & JS.</p>
+        </div>
+    </footer>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="audio-player"></audio>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+        <div class="toast-content">
+            <h4 class="toast-title">Success</h4>
+            <p class="toast-msg" id="toast-message">Copied to clipboard!</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=2"></script>
+</body>
+</html>

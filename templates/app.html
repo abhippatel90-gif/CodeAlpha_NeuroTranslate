@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroTranslate | Translation Studio</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?v=3">
+</head>
+<body class="app-layout">
+    <!-- Animated Background -->
+    <div class="bg-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Minimal App Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-language"></i></div>
+                <span>Neuro<span class="highlight">Translate</span></span>
+            </a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="/" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="app-main">
+        <!-- Translator App Section -->
+        <section id="translator" class="app-section full-height">
+            <div class="container container-wide">
+                <div class="glass-panel translator-interface app-view reveal">
+                    <div class="controls-bar">
+                        <div class="select-wrapper">
+                            <select id="source-lang" class="lang-select">
+                                <option value="auto">🌍 Auto Detect</option>
+                                <!-- JS Injected Options -->
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-icon"></i>
+                        </div>
+                        
+                        <button class="icon-btn swap-btn" id="swap-lang" title="Swap Languages">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+
+                        <div class="select-wrapper">
+                            <select id="target-lang" class="lang-select">
+                                <!-- JS Injected Options -->
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="text-workspace expanded">
+                        <div class="workspace-pane input-pane">
+                            <textarea id="source-text" placeholder="Type or paste your text here..."></textarea>
+                            <div class="pane-footer">
+                                <span class="char-count" id="char-count">0 / 5000</span>
+                                <button class="icon-btn text-muted" id="clear-btn" title="Clear text">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="workspace-divider"></div>
+
+                        <div class="workspace-pane output-pane">
+                            <textarea id="target-text" placeholder="Translation will magically appear here..." readonly></textarea>
+                            
+                            <!-- Loader Overlay -->
+                            <div class="loader" id="loader">
+                                <div class="spinner"></div>
+                                <span>Translating with AI...</span>
+                            </div>
+
+                            <div class="pane-footer justify-end">
+                                <div class="action-group">
+                                    <button class="icon-btn action-btn" id="copy-btn" title="Copy to clipboard">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                    <button class="icon-btn action-btn" id="speak-btn" title="Listen to translation">
+                                        <i class="fa-solid fa-volume-high"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="translate-action-row">
+                        <button class="btn btn-primary btn-block glow-effect" id="translate-btn">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Translate Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="audio-player"></audio>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+        <div class="toast-content">
+            <h4 class="toast-title">Success</h4>
+            <p class="toast-msg" id="toast-message">Copied to clipboard!</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=3"></script>
+</body>
+</html>
